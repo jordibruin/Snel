@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-        
+    
     @Environment(LocationManager.self) var locationManager
     
     @State private var region = MKCoordinateRegion(
@@ -18,57 +18,83 @@ struct ContentView: View {
     )
     
     @State var showMiles = false
+    @State var showSettings = false
     
-    @State var old = Date()
-    
-    @State var displayMode: DisplayMode = .simple
-    
+    @Namespace private var namespace
+    @State var selectedDisplayMode: DisplayMode = .graph
     
     var body: some View {
-        displayMode.view
-            .onTapGesture {
-                displayMode = displayMode.next()
+        NavigationStack {
+            TabView(selection: $selectedDisplayMode) {
+                ForEach(DisplayMode.allCases) { mode in
+                    mode.view
+                }
             }
-        
-//        ZStack {
-//            HStack {
-//                VStack {
-//                    Spacer(minLength: (6 - locationManager.currentSpeed) * 100)
-//                    Color.green
-//                        .opacity(0.2)
-//                }
-//                .edgesIgnoringSafeArea(.all)
-//            }
-//            
-//            VStack {
-//                Text("\(locationManager.currentSpeed)")
-//                Text("\(locationManager.lastUpdatedAt.timeIntervalSince(old))")
-//                if locationManager.currentSpeed <= 0 {
-//                    Text("Sneller!")
-//                } else {
-//                    
-//                    if showMiles {
-//                        Text(String(format:"%.2f", (locationManager.currentSpeed * 2.23694))) + Text("m/h")
-//                            .font(.largeTitle)
-//                    } else {
-//                        Text(String(format:"%.2f", (locationManager.currentSpeed * 3.6))) + Text("km/h")
-//                            .font(.largeTitle)
-//                    }
-//                    
-//                    Group {
-//                        Text(String(format:"%.2f", (locationManager.currentSpeed))) + Text("m/s")
-//                    }
-//                }
-//                
-//            }
-//            .padding()
-//            .onTapGesture {
-//                showMiles.toggle()
-//            }
-//        }
+            .tabViewStyle(.verticalPage)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink(destination: SettingsView()) {
+                        Label("Settings", systemImage: "gearshape.fill")
+                    }
+                }
+            }
+            .sheet(isPresented: $showSettings, content: {
+                SettingsView()
+            })
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .environment(LocationManager())
 }
+
+import Defaults
+
+struct SettingsView: View {
+    
+    @Environment(LocationManager.self) var locationManager
+    
+    @AppStorage("showMiles") var showMiles: Bool = false
+    
+    @Default(.selectedSpeedOption) var selectedSpeedOption
+    @Default(.maxSpeedInMetersPerSecond) var maxSpeedInMetersPerSecond
+    
+    var body: some View {
+        List {
+            Section {
+                HStack {
+                    Text("Max Speed")
+                    Spacer()
+                    
+                    VStack {
+                        Text(String(format:"%.1f", (locationManager.correctMaxSpeed)))
+                            .bold()
+                        Text(selectedSpeedOption.shortName)
+                    }
+                    .font(.caption)
+                }
+                Button(action: {
+                    maxSpeedInMetersPerSecond = 0.0
+                }, label: {
+                    Label("Reset Max Speed", systemImage: "gauge.with.dots.needle.0percent")
+                })
+            }
+            
+            Section {
+                Picker(selection: $selectedSpeedOption) {
+                    ForEach(SpeedOption.allCases) { option in
+                        Text(option.name).tag(option)
+                    }
+                } label: {
+                    Text("Speed Unit")
+                }
+            }
+        }
+    }
+    
+    
+}
+
+

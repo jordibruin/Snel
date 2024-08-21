@@ -11,6 +11,12 @@
 		C2ADA4262C75EECF00179D5F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4242C75EECF00179D5F /* LocationManager.swift */; };
 		C2ADA4282C75EFAC00179D5F /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4272C75EFAC00179D5F /* DisplayMode.swift */; };
 		C2ADA4292C75EFAC00179D5F /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4272C75EFAC00179D5F /* DisplayMode.swift */; };
+		C2ADA42C2C76118E00179D5F /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = C2ADA42B2C76118E00179D5F /* Defaults */; };
+		C2ADA42F2C76119900179D5F /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = C2ADA42E2C76119900179D5F /* Defaults */; };
+		C2ADA4312C7611A200179D5F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4302C7611A200179D5F /* Defaults.swift */; };
+		C2ADA4322C7611A200179D5F /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4302C7611A200179D5F /* Defaults.swift */; };
+		C2ADA4342C7611C900179D5F /* SpeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4332C7611C900179D5F /* SpeedOption.swift */; };
+		C2ADA4352C7611C900179D5F /* SpeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4332C7611C900179D5F /* SpeedOption.swift */; };
 		C2DDE21D2C6BFE3000132FB4 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDE21C2C6BFE3000132FB4 /* SnelApp.swift */; };
 		C2DDE21F2C6BFE3000132FB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDE21E2C6BFE3000132FB4 /* ContentView.swift */; };
 		C2DDE2212C6BFE3100132FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2DDE2202C6BFE3100132FB4 /* Assets.xcassets */; };
@@ -51,6 +57,8 @@
 /* Begin PBXFileReference section */
 		C2ADA4242C75EECF00179D5F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C2ADA4272C75EFAC00179D5F /* DisplayMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
+		C2ADA4302C7611A200179D5F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		C2ADA4332C7611C900179D5F /* SpeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedOption.swift; sourceTree = "<group>"; };
 		C2DDE2192C6BFE3000132FB4 /* Snel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DDE21C2C6BFE3000132FB4 /* SnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelApp.swift; sourceTree = "<group>"; };
 		C2DDE21E2C6BFE3000132FB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2ADA42F2C76119900179D5F /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,18 +86,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2ADA42C2C76118E00179D5F /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2ADA42D2C76119900179D5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2DDE2102C6BFE3000132FB4 = {
 			isa = PBXGroup;
 			children = (
 				C2DDE21B2C6BFE3000132FB4 /* Snel */,
 				C2DDE2332C6C06ED00132FB4 /* Snel Watch Watch App */,
 				C2DDE21A2C6BFE3000132FB4 /* Products */,
+				C2ADA42D2C76119900179D5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +126,8 @@
 				C2DDE21E2C6BFE3000132FB4 /* ContentView.swift */,
 				C2ADA4242C75EECF00179D5F /* LocationManager.swift */,
 				C2ADA4272C75EFAC00179D5F /* DisplayMode.swift */,
+				C2ADA4302C7611A200179D5F /* Defaults.swift */,
+				C2ADA4332C7611C900179D5F /* SpeedOption.swift */,
 				C2DDE22A2C6BFE3D00132FB4 /* Maastricht.gpx */,
 				C2DDE22C2C6C000E00132FB4 /* artis-slowspeed.gpx */,
 				C2DDE2202C6BFE3100132FB4 /* Assets.xcassets */,
@@ -161,6 +181,9 @@
 				C2DDE23E2C6C06EE00132FB4 /* PBXTargetDependency */,
 			);
 			name = Snel;
+			packageProductDependencies = (
+				C2ADA42E2C76119900179D5F /* Defaults */,
+			);
 			productName = Snel;
 			productReference = C2DDE2192C6BFE3000132FB4 /* Snel.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +201,9 @@
 			dependencies = (
 			);
 			name = "Snel Watch Watch App";
+			packageProductDependencies = (
+				C2ADA42B2C76118E00179D5F /* Defaults */,
+			);
 			productName = "Snel Watch Watch App";
 			productReference = C2DDE2322C6C06ED00132FB4 /* Snel Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +235,9 @@
 				Base,
 			);
 			mainGroup = C2DDE2102C6BFE3000132FB4;
+			packageReferences = (
+				C2ADA42A2C76118E00179D5F /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
 			productRefGroup = C2DDE21A2C6BFE3000132FB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,8 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2ADA4342C7611C900179D5F /* SpeedOption.swift in Sources */,
 				C2DDE21F2C6BFE3000132FB4 /* ContentView.swift in Sources */,
 				C2DDE21D2C6BFE3000132FB4 /* SnelApp.swift in Sources */,
+				C2ADA4312C7611A200179D5F /* Defaults.swift in Sources */,
 				C2ADA4252C75EECF00179D5F /* LocationManager.swift in Sources */,
 				C2ADA4282C75EFAC00179D5F /* DisplayMode.swift in Sources */,
 			);
@@ -258,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2ADA4352C7611C900179D5F /* SpeedOption.swift in Sources */,
 				C2DDE2372C6C06ED00132FB4 /* ContentView.swift in Sources */,
 				C2DDE2352C6C06ED00132FB4 /* Snel_WatchApp.swift in Sources */,
+				C2ADA4322C7611A200179D5F /* Defaults.swift in Sources */,
 				C2ADA4262C75EECF00179D5F /* LocationManager.swift in Sources */,
 				C2ADA4292C75EFAC00179D5F /* DisplayMode.swift in Sources */,
 			);
@@ -560,6 +593,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C2ADA42A2C76118E00179D5F /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C2ADA42B2C76118E00179D5F /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2ADA42A2C76118E00179D5F /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		C2ADA42E2C76119900179D5F /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2ADA42A2C76118E00179D5F /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C2DDE2112C6BFE3000132FB4 /* Project object */;
 }

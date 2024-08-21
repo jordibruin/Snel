@@ -9,21 +9,21 @@ import Foundation
 import SwiftUI
 
 enum DisplayMode: String, CaseIterable, Identifiable {
-    case simple
+//    case simple
     case graph
-    case fullscreen
+    case map
     
     var id: String { self.rawValue }
     
     @ViewBuilder
     var view: some View {
         switch self {
-        case .simple:
-            SimpleView()
+//        case .simple:
+//            SimpleView()
         case .graph:
             GraphView()
-        case .fullscreen:
-            FullScreenView()
+        case .map:
+            MapView()
         }
     }
     
@@ -40,10 +40,15 @@ struct SimpleView: View {
     @Environment(LocationManager.self) var locationManager
     
     var body: some View {
-        Text("\(locationManager.currentSpeed)")
-            .font(.largeTitle)
-        
-        Text("SimpleView")
+        VStack {
+            Text(String(format:"%.1f", (locationManager.correctMaxSpeed)))
+                .font(.largeTitle)
+            
+            Text("SimpleView")
+            
+            Text("No speed: \(locationManager.noSpeedReceivedCount)")
+                .font(.caption)
+        }
     }
 }
 
@@ -52,35 +57,88 @@ struct GraphView: View {
     @Environment(LocationManager.self) var locationManager
     
     var body: some View {
-        #if os(watchOS)
-        Gauge(
-            value: locationManager.currentSpeed,
-            in: 0...40,
-            label: {
-                Text("km/h")
-            },
-            currentValueLabel: {
-                Text(String(format:"%.2f", (locationManager.currentSpeed)))
+        circleView
+    }
+    
+    var circleView: some View {
+        VStack {
+            ZStack {
+                background
+                foreground
+                
+                Text(String(format:"%.0f", (locationManager.correctMaxSpeed)))
+                    .font(.system(size: 80))
+                    .fontWidth(.expanded)
+                    .bold()
                     .contentTransition(.numericText())
                     .transaction {
                         $0.animation = .default
                     }
+                    .monospacedDigit()
+                
             }
-        )
-        .gaugeStyle(.circular)
-        .tint(.blue)
-        .scaleEffect(3.0)
-           
-        #elseif os(iOS)
-            Gauge(value: locationManager.currentSpeed, label: {
-                Text("\(locationManager.currentSpeed)")
-            })
-        #endif
+            
+            if let error = locationManager.error {
+                Text(error.localizedDescription)
+                    .font(.caption)
+            }
+            
+            if locationManager.correctMaxSpeed <= 0 {
+                Text("No Movement Detected")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+    
+    var background: some View {
+        Circle()
+            .trim(from: 0, to: 0.7)
+            .stroke(Color(white: 140/255),
+                    style: StrokeStyle(
+                        lineWidth: 20,
+                        lineCap: .butt,
+                        lineJoin: .miter,
+                        miterLimit: 0,
+                        dash: [1, 4],
+                        dashPhase: 0))
+            .rotationEffect(.degrees(-210))
+    }
+    
+    var foreground: some View {
+        Circle()
+            .trim(from: 0, to: locationManager.speedInKilometersHour / 50)
+            .stroke(
+                .blue,
+                style: .init(
+                    lineWidth: 20,
+                    lineCap: .butt
+                )
+            )
+            .rotationEffect(.degrees(-210))
+            .animation(.bouncy, value: locationManager.speedInKilometersHour)
     }
 }
 
-struct FullScreenView: View {
+#Preview(body: {
+    GraphView()
+        .environment(LocationManager())
+})
+
+import MapKit
+
+struct MapView: View {
+    
+    @Environment(LocationManager.self) var locationManager
+    
+    @State var mapCameraPosition = MapCameraPosition.userLocation(fallback: .automatic)
+    
     var body: some View {
-        Text("FullScreenView")
+        Map(position: $mapCameraPosition, content: {
+            UserAnnotation()
+        })
+        .animation(.easeInOut, value: locationManager.lastLocation)
+        .disabled(true)
     }
 }
+
