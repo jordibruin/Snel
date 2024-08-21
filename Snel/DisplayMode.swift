@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Defaults
 
 enum DisplayMode: String, CaseIterable, Identifiable {
 //    case simple
@@ -26,7 +27,9 @@ enum DisplayMode: String, CaseIterable, Identifiable {
             MapView()
         }
     }
-    
+}
+
+extension CaseIterable where Self: Equatable {
     func next() -> Self {
         let all = Self.allCases
         let idx = all.firstIndex(of: self)!
@@ -39,13 +42,14 @@ struct SimpleView: View {
     
     @Environment(LocationManager.self) var locationManager
     
+    @Default(.decimalCount) var decimalCount
+    
     var body: some View {
         VStack {
-            Text(String(format:"%.1f", (locationManager.correctMaxSpeed)))
+            Text(String(format:"%.\(decimalCount)f", (locationManager.correctMaxSpeed)))
                 .font(.largeTitle)
             
             Text("SimpleView")
-            
             Text("No speed: \(locationManager.noSpeedReceivedCount)")
                 .font(.caption)
         }
@@ -55,6 +59,8 @@ struct SimpleView: View {
 struct GraphView: View {
     
     @Environment(LocationManager.self) var locationManager
+    @Default(.decimalCount) var decimalCount
+    @Default(.selectedSpeedOption) var selectedSpeedOption
     
     var body: some View {
         circleView
@@ -66,9 +72,11 @@ struct GraphView: View {
                 background
                 foreground
                 
-                Text(String(format:"%.0f", (locationManager.correctMaxSpeed)))
-                    .font(.system(size: 80))
-                    .fontWidth(.expanded)
+                Text(String(format:"%.\(decimalCount)f", (locationManager.correctMaxSpeed)))
+//                    .font(.system(size: 80))
+                    .font(decimalCount < 1 ? .system(size: 72) : decimalCount <= 2 ? .largeTitle : .title)
+                    .minimumScaleFactor(0.5)
+//                    .fontWidth(.expanded)
                     .bold()
                     .contentTransition(.numericText())
                     .transaction {
@@ -87,13 +95,19 @@ struct GraphView: View {
                 Text("No Movement Detected")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+            } else {
+                Text(selectedSpeedOption.shortName)
+                    .foregroundStyle(.secondary)
+                    .onTapGesture {
+                        selectedSpeedOption = selectedSpeedOption.next()
+                    }
             }
         }
     }
     
     var background: some View {
         Circle()
-            .trim(from: 0, to: 0.7)
+            .trim(from: 0, to: 0.75)
             .stroke(Color(white: 140/255),
                     style: StrokeStyle(
                         lineWidth: 20,
@@ -102,12 +116,12 @@ struct GraphView: View {
                         miterLimit: 0,
                         dash: [1, 4],
                         dashPhase: 0))
-            .rotationEffect(.degrees(-210))
+            .rotationEffect(.degrees(135))
     }
     
     var foreground: some View {
         Circle()
-            .trim(from: 0, to: locationManager.speedInKilometersHour / 50)
+            .trim(from: 0, to: locationManager.speedInKilometersHour / selectedSpeedOption.max)
             .stroke(
                 .blue,
                 style: .init(
@@ -115,7 +129,7 @@ struct GraphView: View {
                     lineCap: .butt
                 )
             )
-            .rotationEffect(.degrees(-210))
+            .rotationEffect(.degrees(135))
             .animation(.bouncy, value: locationManager.speedInKilometersHour)
     }
 }
@@ -130,7 +144,6 @@ import MapKit
 struct MapView: View {
     
     @Environment(LocationManager.self) var locationManager
-    
     @State var mapCameraPosition = MapCameraPosition.userLocation(fallback: .automatic)
     
     var body: some View {

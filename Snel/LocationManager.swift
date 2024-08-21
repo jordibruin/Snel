@@ -100,24 +100,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     var error: Error?
-//    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let lastLocation = locations.last else { return }
-//        
-////        if lastLocation.speed > 0 {
-//            currentSpeed = lastLocation.speed
-////        }
-//        
-//        if currentSpeed <= 0 {
-//            noSpeedReceivedCount += 1
-//        } else {
-//            noSpeedReceivedCount = 0
-//        }
-//        
-//        self.lastLocation = lastLocation
-//        self.lastUpdatedAt = Date()
-//    }
-    
+
     // To generate fake speed data
     func generateFakeSpeeds(range: ClosedRange<Double>) {
         // Generate a random speed within the provided range

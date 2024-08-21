@@ -36,4 +36,15 @@ enum SpeedOption: String, CaseIterable, Identifiable, Defaults.Serializable {
             "m/h"
         }
     }
+    
+    var max: Double {
+        switch self {
+        case .metersPerSecond:
+            return 10
+        case .kilometsPerHour:
+            return 40
+        case .milesPerHour:
+            return 30
+        }
+    }
 }

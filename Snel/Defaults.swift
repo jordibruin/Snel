@@ -15,4 +15,6 @@ extension Defaults.Keys {
     static let autoSetSpeedOptionBasedOnLocale = Key<Bool>("autoSetSpeedOptionBasedOnLocale", default: false)
     
     static let maxSpeedInMetersPerSecond = Key<Double>("maxSpeedInMetersPerSecond", default: 0.0)
+    
+    static let decimalCount = Key<Int>("decimalCount", default: 0)
 }
