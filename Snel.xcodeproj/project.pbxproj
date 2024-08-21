@@ -7,42 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2F903732C76377800EAE312 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903722C76377800EAE312 /* SnelApp.swift */; };
-		C2F903772C76377900EAE312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F903762C76377900EAE312 /* Assets.xcassets */; };
-		C2F9037A2C76377900EAE312 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F903792C76377900EAE312 /* Preview Assets.xcassets */; };
-		C2F903842C76379F00EAE312 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903802C76379F00EAE312 /* LocationManager.swift */; };
-		C2F903852C76379F00EAE312 /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903812C76379F00EAE312 /* DisplayMode.swift */; };
-		C2F903862C76379F00EAE312 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903822C76379F00EAE312 /* ContentView.swift */; };
-		C2F903872C76379F00EAE312 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903832C76379F00EAE312 /* Defaults.swift */; };
-		C2F9038C2C7637A400EAE312 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903882C7637A400EAE312 /* SettingsView.swift */; };
-		C2F9038D2C7637A400EAE312 /* SpeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903892C7637A400EAE312 /* SpeedOption.swift */; };
-		C2F9038E2C7637A400EAE312 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F9038A2C7637A400EAE312 /* Theme.swift */; };
-		C2F903972C7637C400EAE312 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F903962C7637C400EAE312 /* WidgetKit.framework */; };
-		C2F903992C7637C400EAE312 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F903982C7637C400EAE312 /* SwiftUI.framework */; };
-		C2F9039E2C7637C500EAE312 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F9039D2C7637C500EAE312 /* Assets.xcassets */; };
-		C2F903A22C7637C500EAE312 /* Snel ComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C2F903942C7637C400EAE312 /* Snel ComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C2F903A82C7637CF00EAE312 /* Snel_Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F903A72C7637CF00EAE312 /* Snel_Complication.swift */; };
-		C2F903AB2C76381600EAE312 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = C2F903AA2C76381600EAE312 /* Defaults */; };
+		C2A4CF052C763A24000181C6 /* Snel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C2A4CF042C763A24000181C6 /* Snel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C2A4CF0A2C763A24000181C6 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF092C763A24000181C6 /* SnelApp.swift */; };
+		C2A4CF112C763A25000181C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CF102C763A25000181C6 /* Preview Assets.xcassets */; };
+		C2A4CF1B2C763A25000181C6 /* Snel_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF1A2C763A25000181C6 /* Snel_Watch_AppTests.swift */; };
+		C2A4CF252C763A25000181C6 /* Snel_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF242C763A25000181C6 /* Snel_Watch_AppUITests.swift */; };
+		C2A4CF272C763A25000181C6 /* Snel_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF262C763A25000181C6 /* Snel_Watch_AppUITestsLaunchTests.swift */; };
+		C2A4CF3B2C763B59000181C6 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF372C763B59000181C6 /* Defaults.swift */; };
+		C2A4CF3C2C763B59000181C6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF382C763B59000181C6 /* LocationManager.swift */; };
+		C2A4CF3D2C763B59000181C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF392C763B59000181C6 /* ContentView.swift */; };
+		C2A4CF3E2C763B59000181C6 /* DisplayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF3A2C763B59000181C6 /* DisplayMode.swift */; };
+		C2A4CF432C763B61000181C6 /* SpeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF3F2C763B61000181C6 /* SpeedOption.swift */; };
+		C2A4CF452C763B61000181C6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF412C763B61000181C6 /* Theme.swift */; };
+		C2A4CF462C763B61000181C6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF422C763B61000181C6 /* SettingsView.swift */; };
+		C2A4CF482C763B6B000181C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CF472C763B6B000181C6 /* Assets.xcassets */; };
+		C2A4CF4B2C763B8E000181C6 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = C2A4CF4A2C763B8E000181C6 /* Defaults */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C2F903A02C7637C500EAE312 /* PBXContainerItemProxy */ = {
+		C2A4CF062C763A24000181C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C2F903672C76377800EAE312 /* Project object */;
+			containerPortal = C2A4CEF82C763A24000181C6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C2F903932C7637C400EAE312;
-			remoteInfo = "Snel ComplicationExtension";
+			remoteGlobalIDString = C2A4CF032C763A24000181C6;
+			remoteInfo = "Snel Watch App";
+		};
+		C2A4CF172C763A25000181C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2A4CEF82C763A24000181C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2A4CF032C763A24000181C6;
+			remoteInfo = "Snel Watch App";
+		};
+		C2A4CF212C763A25000181C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2A4CEF82C763A24000181C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2A4CF032C763A24000181C6;
+			remoteInfo = "Snel Watch App";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C2F903A62C7637C500EAE312 /* Embed Foundation Extensions */ = {
+		C2A4CF2D2C763A25000181C6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C2A4CF052C763A24000181C6 /* Snel Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4CF642C763B9E000181C6 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				C2F903A22C7637C500EAE312 /* Snel ComplicationExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,170 +73,232 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C2F9036F2C76377800EAE312 /* Snel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2F903722C76377800EAE312 /* SnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelApp.swift; sourceTree = "<group>"; };
-		C2F903762C76377900EAE312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C2F903792C76377900EAE312 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C2F903802C76379F00EAE312 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		C2F903812C76379F00EAE312 /* DisplayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
-		C2F903822C76379F00EAE312 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C2F903832C76379F00EAE312 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		C2F903882C7637A400EAE312 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		C2F903892C7637A400EAE312 /* SpeedOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedOption.swift; sourceTree = "<group>"; };
-		C2F9038A2C7637A400EAE312 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		C2F903942C7637C400EAE312 /* Snel ComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Snel ComplicationExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2F903962C7637C400EAE312 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		C2F903982C7637C400EAE312 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		C2F9039D2C7637C500EAE312 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C2F9039F2C7637C500EAE312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2F903A72C7637CF00EAE312 /* Snel_Complication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Snel_Complication.swift; path = "../../Snel-old/Snel Complication/Snel_Complication.swift"; sourceTree = "<group>"; };
+		C2A4CEFE2C763A24000181C6 /* Snel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4CF042C763A24000181C6 /* Snel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4CF092C763A24000181C6 /* SnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelApp.swift; sourceTree = "<group>"; };
+		C2A4CF102C763A25000181C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C2A4CF162C763A25000181C6 /* Snel Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snel Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4CF1A2C763A25000181C6 /* Snel_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snel_Watch_AppTests.swift; sourceTree = "<group>"; };
+		C2A4CF202C763A25000181C6 /* Snel Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Snel Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A4CF242C763A25000181C6 /* Snel_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snel_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		C2A4CF262C763A25000181C6 /* Snel_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snel_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C2A4CF372C763B59000181C6 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		C2A4CF382C763B59000181C6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C2A4CF392C763B59000181C6 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C2A4CF3A2C763B59000181C6 /* DisplayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayMode.swift; sourceTree = "<group>"; };
+		C2A4CF3F2C763B61000181C6 /* SpeedOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedOption.swift; sourceTree = "<group>"; };
+		C2A4CF412C763B61000181C6 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		C2A4CF422C763B61000181C6 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C2A4CF472C763B6B000181C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2A4CF522C763B9D000181C6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		C2A4CF542C763B9D000181C6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		C2C19ACD2C7642D8004E4451 /* Snel-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Snel-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C2F9036C2C76377800EAE312 /* Frameworks */ = {
+		C2A4CF012C763A24000181C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F903AB2C76381600EAE312 /* Defaults in Frameworks */,
+				C2A4CF4B2C763B8E000181C6 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2F903912C7637C400EAE312 /* Frameworks */ = {
+		C2A4CF132C763A25000181C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F903992C7637C400EAE312 /* SwiftUI.framework in Frameworks */,
-				C2F903972C7637C400EAE312 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4CF1D2C763A25000181C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C2F903662C76377800EAE312 = {
+		C2A4CEF72C763A24000181C6 = {
 			isa = PBXGroup;
 			children = (
-				C2F903712C76377800EAE312 /* Snel Watch App */,
-				C2F9039A2C7637C400EAE312 /* Snel Complication */,
-				C2F903952C7637C400EAE312 /* Frameworks */,
-				C2F903702C76377800EAE312 /* Products */,
+				C2A4CF082C763A24000181C6 /* Snel Watch App */,
+				C2A4CF192C763A25000181C6 /* Snel Watch AppTests */,
+				C2A4CF232C763A25000181C6 /* Snel Watch AppUITests */,
+				C2A4CF512C763B9D000181C6 /* Frameworks */,
+				C2A4CEFF2C763A24000181C6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C2F903702C76377800EAE312 /* Products */ = {
+		C2A4CEFF2C763A24000181C6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2F9036F2C76377800EAE312 /* Snel Watch App.app */,
-				C2F903942C7637C400EAE312 /* Snel ComplicationExtension.appex */,
+				C2A4CEFE2C763A24000181C6 /* Snel.app */,
+				C2A4CF042C763A24000181C6 /* Snel Watch App.app */,
+				C2A4CF162C763A25000181C6 /* Snel Watch AppTests.xctest */,
+				C2A4CF202C763A25000181C6 /* Snel Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C2F903712C76377800EAE312 /* Snel Watch App */ = {
+		C2A4CF082C763A24000181C6 /* Snel Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				C2F903722C76377800EAE312 /* SnelApp.swift */,
-				C2F903822C76379F00EAE312 /* ContentView.swift */,
-				C2F903832C76379F00EAE312 /* Defaults.swift */,
-				C2F903812C76379F00EAE312 /* DisplayMode.swift */,
-				C2F903802C76379F00EAE312 /* LocationManager.swift */,
-				C2F903882C7637A400EAE312 /* SettingsView.swift */,
-				C2F903892C7637A400EAE312 /* SpeedOption.swift */,
-				C2F9038A2C7637A400EAE312 /* Theme.swift */,
-				C2F903762C76377900EAE312 /* Assets.xcassets */,
-				C2F903782C76377900EAE312 /* Preview Content */,
+				C2C19ACD2C7642D8004E4451 /* Snel-Watch-App-Info.plist */,
+				C2A4CF092C763A24000181C6 /* SnelApp.swift */,
+				C2A4CF392C763B59000181C6 /* ContentView.swift */,
+				C2A4CF372C763B59000181C6 /* Defaults.swift */,
+				C2A4CF3A2C763B59000181C6 /* DisplayMode.swift */,
+				C2A4CF382C763B59000181C6 /* LocationManager.swift */,
+				C2A4CF422C763B61000181C6 /* SettingsView.swift */,
+				C2A4CF3F2C763B61000181C6 /* SpeedOption.swift */,
+				C2A4CF412C763B61000181C6 /* Theme.swift */,
+				C2A4CF472C763B6B000181C6 /* Assets.xcassets */,
+				C2A4CF0F2C763A25000181C6 /* Preview Content */,
 			);
 			path = "Snel Watch App";
 			sourceTree = "<group>";
 		};
-		C2F903782C76377900EAE312 /* Preview Content */ = {
+		C2A4CF0F2C763A25000181C6 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C2F903792C76377900EAE312 /* Preview Assets.xcassets */,
+				C2A4CF102C763A25000181C6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C2F903952C7637C400EAE312 /* Frameworks */ = {
+		C2A4CF192C763A25000181C6 /* Snel Watch AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				C2F903962C7637C400EAE312 /* WidgetKit.framework */,
-				C2F903982C7637C400EAE312 /* SwiftUI.framework */,
+				C2A4CF1A2C763A25000181C6 /* Snel_Watch_AppTests.swift */,
 			);
-			name = Frameworks;
+			path = "Snel Watch AppTests";
 			sourceTree = "<group>";
 		};
-		C2F9039A2C7637C400EAE312 /* Snel Complication */ = {
+		C2A4CF232C763A25000181C6 /* Snel Watch AppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C2F903A72C7637CF00EAE312 /* Snel_Complication.swift */,
-				C2F9039D2C7637C500EAE312 /* Assets.xcassets */,
-				C2F9039F2C7637C500EAE312 /* Info.plist */,
+				C2A4CF242C763A25000181C6 /* Snel_Watch_AppUITests.swift */,
+				C2A4CF262C763A25000181C6 /* Snel_Watch_AppUITestsLaunchTests.swift */,
 			);
-			path = "Snel Complication";
+			path = "Snel Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		C2A4CF512C763B9D000181C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4CF522C763B9D000181C6 /* WidgetKit.framework */,
+				C2A4CF542C763B9D000181C6 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C2F9036E2C76377800EAE312 /* Snel Watch App */ = {
+		C2A4CEFD2C763A24000181C6 /* Snel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2F9037D2C76377900EAE312 /* Build configuration list for PBXNativeTarget "Snel Watch App" */;
+			buildConfigurationList = C2A4CF2E2C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel" */;
 			buildPhases = (
-				C2F9036B2C76377800EAE312 /* Sources */,
-				C2F9036C2C76377800EAE312 /* Frameworks */,
-				C2F9036D2C76377800EAE312 /* Resources */,
-				C2F903A62C7637C500EAE312 /* Embed Foundation Extensions */,
+				C2A4CEFC2C763A24000181C6 /* Resources */,
+				C2A4CF2D2C763A25000181C6 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C2F903A12C7637C500EAE312 /* PBXTargetDependency */,
+				C2A4CF072C763A24000181C6 /* PBXTargetDependency */,
+			);
+			name = Snel;
+			productName = Snel;
+			productReference = C2A4CEFE2C763A24000181C6 /* Snel.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		C2A4CF032C763A24000181C6 /* Snel Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A4CF2A2C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel Watch App" */;
+			buildPhases = (
+				C2A4CF002C763A24000181C6 /* Sources */,
+				C2A4CF012C763A24000181C6 /* Frameworks */,
+				C2A4CF022C763A24000181C6 /* Resources */,
+				C2A4CF642C763B9E000181C6 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
 			);
 			name = "Snel Watch App";
 			packageProductDependencies = (
-				C2F903AA2C76381600EAE312 /* Defaults */,
+				C2A4CF4A2C763B8E000181C6 /* Defaults */,
 			);
 			productName = "Snel Watch App";
-			productReference = C2F9036F2C76377800EAE312 /* Snel Watch App.app */;
+			productReference = C2A4CF042C763A24000181C6 /* Snel Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C2F903932C7637C400EAE312 /* Snel ComplicationExtension */ = {
+		C2A4CF152C763A25000181C6 /* Snel Watch AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2F903A32C7637C500EAE312 /* Build configuration list for PBXNativeTarget "Snel ComplicationExtension" */;
+			buildConfigurationList = C2A4CF312C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel Watch AppTests" */;
 			buildPhases = (
-				C2F903902C7637C400EAE312 /* Sources */,
-				C2F903912C7637C400EAE312 /* Frameworks */,
-				C2F903922C7637C400EAE312 /* Resources */,
+				C2A4CF122C763A25000181C6 /* Sources */,
+				C2A4CF132C763A25000181C6 /* Frameworks */,
+				C2A4CF142C763A25000181C6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C2A4CF182C763A25000181C6 /* PBXTargetDependency */,
 			);
-			name = "Snel ComplicationExtension";
-			productName = "Snel ComplicationExtension";
-			productReference = C2F903942C7637C400EAE312 /* Snel ComplicationExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
+			name = "Snel Watch AppTests";
+			productName = "Snel Watch AppTests";
+			productReference = C2A4CF162C763A25000181C6 /* Snel Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C2A4CF1F2C763A25000181C6 /* Snel Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2A4CF342C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel Watch AppUITests" */;
+			buildPhases = (
+				C2A4CF1C2C763A25000181C6 /* Sources */,
+				C2A4CF1D2C763A25000181C6 /* Frameworks */,
+				C2A4CF1E2C763A25000181C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2A4CF222C763A25000181C6 /* PBXTargetDependency */,
+			);
+			name = "Snel Watch AppUITests";
+			productName = "Snel Watch AppUITests";
+			productReference = C2A4CF202C763A25000181C6 /* Snel Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C2F903672C76377800EAE312 /* Project object */ = {
+		C2A4CEF82C763A24000181C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
-					C2F9036E2C76377800EAE312 = {
+					C2A4CEFD2C763A24000181C6 = {
 						CreatedOnToolsVersion = 15.3;
 					};
-					C2F903932C7637C400EAE312 = {
+					C2A4CF032C763A24000181C6 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					C2A4CF152C763A25000181C6 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = C2A4CF032C763A24000181C6;
+					};
+					C2A4CF1F2C763A25000181C6 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = C2A4CF032C763A24000181C6;
 					};
 				};
 			};
-			buildConfigurationList = C2F9036A2C76377800EAE312 /* Build configuration list for PBXProject "Snel" */;
+			buildConfigurationList = C2A4CEFB2C763A24000181C6 /* Build configuration list for PBXProject "Snel" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -221,76 +306,110 @@
 				en,
 				Base,
 			);
-			mainGroup = C2F903662C76377800EAE312;
+			mainGroup = C2A4CEF72C763A24000181C6;
 			packageReferences = (
-				C2F903A92C76381600EAE312 /* XCRemoteSwiftPackageReference "Defaults" */,
+				C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
-			productRefGroup = C2F903702C76377800EAE312 /* Products */;
+			productRefGroup = C2A4CEFF2C763A24000181C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2F9036E2C76377800EAE312 /* Snel Watch App */,
-				C2F903932C7637C400EAE312 /* Snel ComplicationExtension */,
+				C2A4CEFD2C763A24000181C6 /* Snel */,
+				C2A4CF032C763A24000181C6 /* Snel Watch App */,
+				C2A4CF152C763A25000181C6 /* Snel Watch AppTests */,
+				C2A4CF1F2C763A25000181C6 /* Snel Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C2F9036D2C76377800EAE312 /* Resources */ = {
+		C2A4CEFC2C763A24000181C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F9037A2C76377900EAE312 /* Preview Assets.xcassets in Resources */,
-				C2F903772C76377900EAE312 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2F903922C7637C400EAE312 /* Resources */ = {
+		C2A4CF022C763A24000181C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F9039E2C7637C500EAE312 /* Assets.xcassets in Resources */,
+				C2A4CF482C763B6B000181C6 /* Assets.xcassets in Resources */,
+				C2A4CF112C763A25000181C6 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4CF142C763A25000181C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4CF1E2C763A25000181C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C2F9036B2C76377800EAE312 /* Sources */ = {
+		C2A4CF002C763A24000181C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F903852C76379F00EAE312 /* DisplayMode.swift in Sources */,
-				C2F9038E2C7637A400EAE312 /* Theme.swift in Sources */,
-				C2F903842C76379F00EAE312 /* LocationManager.swift in Sources */,
-				C2F9038D2C7637A400EAE312 /* SpeedOption.swift in Sources */,
-				C2F903872C76379F00EAE312 /* Defaults.swift in Sources */,
-				C2F9038C2C7637A400EAE312 /* SettingsView.swift in Sources */,
-				C2F903862C76379F00EAE312 /* ContentView.swift in Sources */,
-				C2F903732C76377800EAE312 /* SnelApp.swift in Sources */,
+				C2A4CF432C763B61000181C6 /* SpeedOption.swift in Sources */,
+				C2A4CF452C763B61000181C6 /* Theme.swift in Sources */,
+				C2A4CF0A2C763A24000181C6 /* SnelApp.swift in Sources */,
+				C2A4CF462C763B61000181C6 /* SettingsView.swift in Sources */,
+				C2A4CF3E2C763B59000181C6 /* DisplayMode.swift in Sources */,
+				C2A4CF3B2C763B59000181C6 /* Defaults.swift in Sources */,
+				C2A4CF3D2C763B59000181C6 /* ContentView.swift in Sources */,
+				C2A4CF3C2C763B59000181C6 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2F903902C7637C400EAE312 /* Sources */ = {
+		C2A4CF122C763A25000181C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F903A82C7637CF00EAE312 /* Snel_Complication.swift in Sources */,
+				C2A4CF1B2C763A25000181C6 /* Snel_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2A4CF1C2C763A25000181C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2A4CF272C763A25000181C6 /* Snel_Watch_AppUITestsLaunchTests.swift in Sources */,
+				C2A4CF252C763A25000181C6 /* Snel_Watch_AppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C2F903A12C7637C500EAE312 /* PBXTargetDependency */ = {
+		C2A4CF072C763A24000181C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C2F903932C7637C400EAE312 /* Snel ComplicationExtension */;
-			targetProxy = C2F903A02C7637C500EAE312 /* PBXContainerItemProxy */;
+			target = C2A4CF032C763A24000181C6 /* Snel Watch App */;
+			targetProxy = C2A4CF062C763A24000181C6 /* PBXContainerItemProxy */;
+		};
+		C2A4CF182C763A25000181C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2A4CF032C763A24000181C6 /* Snel Watch App */;
+			targetProxy = C2A4CF172C763A25000181C6 /* PBXContainerItemProxy */;
+		};
+		C2A4CF222C763A25000181C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2A4CF032C763A24000181C6 /* Snel Watch App */;
+			targetProxy = C2A4CF212C763A25000181C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		C2F9037B2C76377900EAE312 /* Debug */ = {
+		C2A4CF282C763A25000181C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -351,7 +470,7 @@
 			};
 			name = Debug;
 		};
-		C2F9037C2C76377900EAE312 /* Release */ = {
+		C2A4CF292C763A25000181C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -404,58 +523,62 @@
 			};
 			name = Release;
 		};
-		C2F9037E2C76377900EAE312 /* Debug */ = {
+		C2A4CF2B2C763A25000181C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Snel Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Snel-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Snel;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To determine your speed";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 10;
 			};
 			name = Debug;
 		};
-		C2F9037F2C76377900EAE312 /* Release */ = {
+		C2A4CF2C2C763A25000181C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Snel Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Snel-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Snel;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To determine your speed";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -463,66 +586,122 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 10;
 			};
 			name = Release;
 		};
-		C2F903A42C7637C500EAE312 /* Debug */ = {
+		C2A4CF2F2C763A25000181C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q7TMPA46J;
+				INFOPLIST_KEY_CFBundleDisplayName = Snel;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C2A4CF302C763A25000181C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q7TMPA46J;
+				INFOPLIST_KEY_CFBundleDisplayName = Snel;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2A4CF322C763A25000181C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Snel Complication/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Snel Complication";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ".watchkitapp.Snel-Complication";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goodsnooze.Snel-Watch-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snel Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Snel Watch App";
 				WATCHOS_DEPLOYMENT_TARGET = 10.4;
 			};
 			name = Debug;
 		};
-		C2F903A52C7637C500EAE312 /* Release */ = {
+		C2A4CF332C763A25000181C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Snel Complication/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Snel Complication";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ".watchkitapp.Snel-Complication";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goodsnooze.Snel-Watch-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Snel Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Snel Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Release;
+		};
+		C2A4CF352C763A25000181C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q7TMPA46J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goodsnooze.Snel-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Snel Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Debug;
+		};
+		C2A4CF362C763A25000181C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q7TMPA46J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goodsnooze.Snel-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Snel Watch App";
 				VALIDATE_PRODUCT = YES;
 				WATCHOS_DEPLOYMENT_TARGET = 10.4;
 			};
@@ -531,29 +710,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C2F9036A2C76377800EAE312 /* Build configuration list for PBXProject "Snel" */ = {
+		C2A4CEFB2C763A24000181C6 /* Build configuration list for PBXProject "Snel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2F9037B2C76377900EAE312 /* Debug */,
-				C2F9037C2C76377900EAE312 /* Release */,
+				C2A4CF282C763A25000181C6 /* Debug */,
+				C2A4CF292C763A25000181C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2F9037D2C76377900EAE312 /* Build configuration list for PBXNativeTarget "Snel Watch App" */ = {
+		C2A4CF2A2C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2F9037E2C76377900EAE312 /* Debug */,
-				C2F9037F2C76377900EAE312 /* Release */,
+				C2A4CF2B2C763A25000181C6 /* Debug */,
+				C2A4CF2C2C763A25000181C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2F903A32C7637C500EAE312 /* Build configuration list for PBXNativeTarget "Snel ComplicationExtension" */ = {
+		C2A4CF2E2C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2F903A42C7637C500EAE312 /* Debug */,
-				C2F903A52C7637C500EAE312 /* Release */,
+				C2A4CF2F2C763A25000181C6 /* Debug */,
+				C2A4CF302C763A25000181C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A4CF312C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A4CF322C763A25000181C6 /* Debug */,
+				C2A4CF332C763A25000181C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2A4CF342C763A25000181C6 /* Build configuration list for PBXNativeTarget "Snel Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2A4CF352C763A25000181C6 /* Debug */,
+				C2A4CF362C763A25000181C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -561,7 +758,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C2F903A92C76381600EAE312 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+		C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
 			requirement = {
@@ -572,12 +769,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C2F903AA2C76381600EAE312 /* Defaults */ = {
+		C2A4CF4A2C763B8E000181C6 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C2F903A92C76381600EAE312 /* XCRemoteSwiftPackageReference "Defaults" */;
+			package = C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = C2F903672C76377800EAE312 /* Project object */;
+	rootObject = C2A4CEF82C763A24000181C6 /* Project object */;
 }

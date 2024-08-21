@@ -99,7 +99,6 @@ struct SettingsView: View {
                         }
                     } label: {
                     }
-                    .pickerStyle(.wheel)
                     .frame(width: 40)
                     
                 }
