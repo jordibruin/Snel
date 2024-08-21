@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Snel_Watch_Watch_AppApp: App {
+    
+    @State var locationManager = LocationManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(locationManager)
         }
     }
 }

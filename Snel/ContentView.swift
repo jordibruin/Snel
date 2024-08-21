@@ -10,7 +10,7 @@ import MapKit
 
 struct ContentView: View {
     
-    @StateObject var locationManager = LocationManager()
+    @Environment(LocationManager.self) var locationManager
     
     @State private var region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),

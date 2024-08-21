@@ -7,12 +7,16 @@
 
 import Foundation
 import CoreLocation
+import SwiftUI
 
-class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
+
+@Observable
+class LocationManager: NSObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
-    @Published var currentSpeed: CLLocationSpeed = 0.0
-    @Published var lastLocation: CLLocation = CLLocation(latitude: 0, longitude: 0)
-    @Published var lastUpdatedAt: Date = Date()
+    
+    var currentSpeed: CLLocationSpeed = 0.0
+    var lastLocation: CLLocation = CLLocation(latitude: 0, longitude: 0)
+    var lastUpdatedAt: Date = Date()
     
     private var timer: Timer?
     
@@ -53,7 +57,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     // Start the timer
         private func startTimer() {
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-                self?.generateFakeSpeeds(range: 0.0...100.0)
+                self?.generateFakeSpeeds(range: 5.0...10.0)
             }
         }
         
