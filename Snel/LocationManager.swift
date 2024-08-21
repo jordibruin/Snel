@@ -130,6 +130,17 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         timer?.invalidate()
     }
     
+    var correctSpeed: Double {
+        switch Defaults[.selectedSpeedOption] {
+            
+        case .metersPerSecond:
+            speedInMetersSecond
+        case .kilometsPerHour:
+            speedInKilometersHour
+        case .milesPerHour:
+            speedInMilesHour
+        }
+    }
     var correctMaxSpeed: Double {
         switch Defaults[.selectedSpeedOption] {
             

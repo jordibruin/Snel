@@ -19,6 +19,8 @@
 		C2ADA4352C7611C900179D5F /* SpeedOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4332C7611C900179D5F /* SpeedOption.swift */; };
 		C2ADA4372C76229900179D5F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4362C76229900179D5F /* SettingsView.swift */; };
 		C2ADA4382C76229900179D5F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4362C76229900179D5F /* SettingsView.swift */; };
+		C2ADA43A2C762BFB00179D5F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4392C762BFB00179D5F /* Theme.swift */; };
+		C2ADA43B2C762BFB00179D5F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA4392C762BFB00179D5F /* Theme.swift */; };
 		C2DDE21D2C6BFE3000132FB4 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDE21C2C6BFE3000132FB4 /* SnelApp.swift */; };
 		C2DDE21F2C6BFE3000132FB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DDE21E2C6BFE3000132FB4 /* ContentView.swift */; };
 		C2DDE2212C6BFE3100132FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2DDE2202C6BFE3100132FB4 /* Assets.xcassets */; };
@@ -62,6 +64,7 @@
 		C2ADA4302C7611A200179D5F /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		C2ADA4332C7611C900179D5F /* SpeedOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedOption.swift; sourceTree = "<group>"; };
 		C2ADA4362C76229900179D5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C2ADA4392C762BFB00179D5F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		C2DDE2192C6BFE3000132FB4 /* Snel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DDE21C2C6BFE3000132FB4 /* SnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelApp.swift; sourceTree = "<group>"; };
 		C2DDE21E2C6BFE3000132FB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 				C2ADA4272C75EFAC00179D5F /* DisplayMode.swift */,
 				C2ADA4302C7611A200179D5F /* Defaults.swift */,
 				C2ADA4362C76229900179D5F /* SettingsView.swift */,
+				C2ADA4392C762BFB00179D5F /* Theme.swift */,
 				C2ADA4332C7611C900179D5F /* SpeedOption.swift */,
 				C2DDE22A2C6BFE3D00132FB4 /* Maastricht.gpx */,
 				C2DDE22C2C6C000E00132FB4 /* artis-slowspeed.gpx */,
@@ -281,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2ADA4372C76229900179D5F /* SettingsView.swift in Sources */,
+				C2ADA43A2C762BFB00179D5F /* Theme.swift in Sources */,
 				C2ADA4342C7611C900179D5F /* SpeedOption.swift in Sources */,
 				C2DDE21F2C6BFE3000132FB4 /* ContentView.swift in Sources */,
 				C2DDE21D2C6BFE3000132FB4 /* SnelApp.swift in Sources */,
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2ADA4382C76229900179D5F /* SettingsView.swift in Sources */,
+				C2ADA43B2C762BFB00179D5F /* Theme.swift in Sources */,
 				C2ADA4352C7611C900179D5F /* SpeedOption.swift in Sources */,
 				C2DDE2372C6C06ED00132FB4 /* ContentView.swift in Sources */,
 				C2DDE2352C6C06ED00132FB4 /* Snel_WatchApp.swift in Sources */,

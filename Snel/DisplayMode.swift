@@ -61,6 +61,7 @@ struct GraphView: View {
     @Environment(LocationManager.self) var locationManager
     @Default(.decimalCount) var decimalCount
     @Default(.selectedSpeedOption) var selectedSpeedOption
+    @Default(.selectedTheme) var selectedTheme
     
     var body: some View {
         circleView
@@ -69,21 +70,20 @@ struct GraphView: View {
     var circleView: some View {
         VStack {
             ZStack {
-                background
-                foreground
+                ZStack {
+                    background
+                    foreground
+                }
                 
-                Text(String(format:"%.\(decimalCount)f", (locationManager.correctMaxSpeed)))
-//                    .font(.system(size: 80))
+                Text(String(format:"%.\(decimalCount)f", (locationManager.correctSpeed)))
                     .font(decimalCount < 1 ? .system(size: 72) : decimalCount <= 2 ? .largeTitle : .title)
                     .minimumScaleFactor(0.5)
-//                    .fontWidth(.expanded)
                     .bold()
                     .contentTransition(.numericText())
                     .transaction {
                         $0.animation = .default
                     }
                     .monospacedDigit()
-                
             }
             
             if let error = locationManager.error {
@@ -91,7 +91,7 @@ struct GraphView: View {
                     .font(.caption)
             }
             
-            if locationManager.correctMaxSpeed <= 0 {
+            if locationManager.correctSpeed <= 0 {
                 Text("No Movement Detected")
                     .font(.caption)
                     .foregroundStyle(.secondary)
@@ -105,6 +105,7 @@ struct GraphView: View {
         }
     }
     
+
     var background: some View {
         Circle()
             .trim(from: 0, to: 0.75)
@@ -121,16 +122,16 @@ struct GraphView: View {
     
     var foreground: some View {
         Circle()
-            .trim(from: 0, to: locationManager.speedInKilometersHour / selectedSpeedOption.max)
+            .trim(from: 0, to: locationManager.correctSpeed / selectedSpeedOption.max)
             .stroke(
-                .blue,
+                selectedTheme.color,
                 style: .init(
                     lineWidth: 20,
                     lineCap: .butt
                 )
             )
             .rotationEffect(.degrees(135))
-            .animation(.bouncy, value: locationManager.speedInKilometersHour)
+            .animation(.bouncy, value: locationManager.correctSpeed)
     }
 }
 
