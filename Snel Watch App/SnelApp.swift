@@ -1,15 +1,14 @@
 //
-//  Snel_WatchApp.swift
-//  Snel Watch Watch App
+//  SnelApp.swift
+//  Snel Watch App
 //
-//  Created by Jordi Bruin on 13/08/2024.
+//  Created by Jordi Bruin on 21/08/2024.
 //
 
 import SwiftUI
 
 @main
-struct Snel_Watch_Watch_AppApp: App {
-    
+struct Snel_Watch_AppApp: App {
     @State var locationManager = LocationManager()
     
     var body: some Scene {
