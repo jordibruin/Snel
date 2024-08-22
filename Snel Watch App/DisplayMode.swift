@@ -63,6 +63,8 @@ struct GraphView: View {
     @Default(.selectedSpeedOption) var selectedSpeedOption
     @Default(.selectedTheme) var selectedTheme
     
+    @State var showNoMovementOverlay = false
+    
     var body: some View {
         circleView
     }
@@ -92,9 +94,27 @@ struct GraphView: View {
             }
             
             if locationManager.correctSpeed <= 0 {
-                Text("No Movement Detected")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                HStack {
+                    Spacer()
+                    Text("No Movement Detected")
+                        .font(.system(size: 13))
+                        .foregroundStyle(.secondary)
+                        .layoutPriority(10)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        showNoMovementOverlay = true
+                    }, label: {
+                        Image(systemName: "info.circle")
+                            .foregroundStyle(.secondary)
+                    })
+                    .buttonStyle(.plain)
+                    .layoutPriority(10)
+                    
+                    Spacer()
+                }
+//                .padding(.horizontal, -20)
             } else {
                 Text(selectedSpeedOption.shortName)
                     .foregroundStyle(.secondary)
@@ -103,6 +123,10 @@ struct GraphView: View {
                     }
             }
         }
+        .sheet(isPresented: $showNoMovementOverlay, content: {
+            Text("Snel uses GPS to determine your speed, please move around outside if you don't see any speed measurements.")
+                .multilineTextAlignment(.center)
+        })
     }
     
 

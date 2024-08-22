@@ -16,6 +16,6 @@ extension Defaults.Keys {
     
     static let maxSpeedInMetersPerSecond = Key<Double>("maxSpeedInMetersPerSecond", default: 0.0)
     
-    static let decimalCount = Key<Int>("decimalCount", default: 0)
+    static let decimalCount = Key<Int>("decimalCount", default: 1)
     static let selectedTheme = Key<Theme>("selectedTheme", default: .blue)
 }
