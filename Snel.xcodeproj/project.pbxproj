@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2829DE92C77CFFE00E2FB4E /* Vela in Frameworks */ = {isa = PBXBuildFile; productRef = C2829DE82C77CFFE00E2FB4E /* Vela */; };
 		C2A4CF052C763A24000181C6 /* Snel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C2A4CF042C763A24000181C6 /* Snel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2A4CF0A2C763A24000181C6 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF092C763A24000181C6 /* SnelApp.swift */; };
 		C2A4CF112C763A25000181C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A4CF102C763A25000181C6 /* Preview Assets.xcassets */; };
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2829DE92C77CFFE00E2FB4E /* Vela in Frameworks */,
 				C2A4CF4B2C763B8E000181C6 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +233,7 @@
 			name = "Snel Watch App";
 			packageProductDependencies = (
 				C2A4CF4A2C763B8E000181C6 /* Defaults */,
+				C2829DE82C77CFFE00E2FB4E /* Vela */,
 			);
 			productName = "Snel Watch App";
 			productReference = C2A4CF042C763A24000181C6 /* Snel Watch App.app */;
@@ -309,6 +312,7 @@
 			mainGroup = C2A4CEF72C763A24000181C6;
 			packageReferences = (
 				C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */,
+				C2829DE72C77CFFE00E2FB4E /* XCRemoteSwiftPackageReference "Vela" */,
 			);
 			productRefGroup = C2A4CEFF2C763A24000181C6 /* Products */;
 			projectDirPath = "";
@@ -530,7 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Snel Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				ENABLE_PREVIEWS = YES;
@@ -544,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -563,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Snel Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				ENABLE_PREVIEWS = YES;
@@ -577,7 +581,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -758,6 +762,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C2829DE72C77CFFE00E2FB4E /* XCRemoteSwiftPackageReference "Vela" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Serene-Garden/Vela";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -769,6 +781,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C2829DE82C77CFFE00E2FB4E /* Vela */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2829DE72C77CFFE00E2FB4E /* XCRemoteSwiftPackageReference "Vela" */;
+			productName = Vela;
+		};
 		C2A4CF4A2C763B8E000181C6 /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */;

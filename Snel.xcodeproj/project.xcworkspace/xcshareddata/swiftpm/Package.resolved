@@ -1,5 +1,5 @@
 {
-  "originHash" : "2bfde059353be8ccc64922449a9c017e6e8a78958e9d4aac1f2e50f391c2b137",
+  "originHash" : "80e514f0154b3804f130fb11a451095799ed63193c106e4f471d552bfab61cc4",
   "pins" : [
     {
       "identity" : "defaults",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "4c009d5c2496e7aa126e922c94dd3d6ae049efa2"
+      }
+    },
+    {
+      "identity" : "vela",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Serene-Garden/Vela",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6e350f917b779e7a16fb5240de4b0420e24b5050"
       }
     }
   ],

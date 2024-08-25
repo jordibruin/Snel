@@ -27,9 +27,12 @@ struct ContentView: View {
         NavigationStack {
             TabView(selection: $selectedDisplayMode) {
                 ForEach(DisplayMode.allCases) { mode in
-                    mode.view
+                    mode.view.tag(mode)
                 }
             }
+            .onChange(of: selectedDisplayMode, perform: { newValue in
+                print(newValue)
+            })
             .tabViewStyle(.verticalPage)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

@@ -17,6 +17,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     var currentSpeed: CLLocationSpeed = 0.0
     
+    var recentSpeeds: [Double] = [0,0,0,0,0,0,0,0,0,0]
+    
+    
+    var currentSnelSpeed: SnelSpeed = .zeroSpeed
+    var recentSnelSpeeds: [SnelSpeed] = []
+    
+    
     var speedInMetersSecond: Double = 0.0
     var speedInKilometersHour: Double = 0.0
     var speedInMilesHour: Double = 0.0
@@ -34,6 +41,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     var lastUpdatedAt: Date = Date()
     
     var noSpeedReceivedCount = 0
+    var authorizationStatus: CLAuthorizationStatus = .notDetermined
     
     private var timer: Timer?
     
@@ -46,6 +54,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             print("denied")
         }
         
+        self.authorizationStatus = authorizationStatus
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
 //        locationManager.startUpdatingLocation()
@@ -54,7 +64,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
         
         // Start the timer to call `generateFakeSpeeds` every second
-        //        startTimer()
+//            startTimer()
     }
     
     var updatesStarted = false
@@ -84,7 +94,19 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                         Defaults[.maxSpeedInMetersPerSecond] = currentSpeed
                     }
                     
+                    // Snel Speeds
+                    let snelSpeed = SnelSpeed(meterPerSecond: currentSpeed, date: Date())
+                    currentSnelSpeed = snelSpeed
+                    recentSnelSpeeds.append(snelSpeed)
+                    
+                    if recentSnelSpeeds.count > 30 {
+                        recentSnelSpeeds.removeFirst()
+                    }
+                    
                     speedInMetersSecond = currentSpeed
+                    recentSpeeds.append(currentSpeed)
+                    recentSpeeds.removeFirst()
+                    
                     speedInKilometersHour = Measurement(value: currentSpeed, unit: UnitSpeed.metersPerSecond).converted(to: .kilometersPerHour).value
                     speedInMilesHour = Measurement(value: currentSpeed, unit: UnitSpeed.metersPerSecond).converted(to: .milesPerHour).value
                     horizontalAccuracy = location.horizontalAccuracy
@@ -160,4 +182,43 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             ).converted(to: .milesPerHour).value
         }
     }
+}
+
+struct SnelSpeed: Identifiable, Codable, Defaults.Serializable, Comparable {
+    static func < (lhs: SnelSpeed, rhs: SnelSpeed) -> Bool {
+        lhs.meterPerSecond > rhs.meterPerSecond
+    }
+    
+    
+    let id: UUID
+    let date: Date
+    
+    var meterPerSecond: Double
+    
+    var milePerHour: Double {
+        Measurement(value: meterPerSecond, unit: UnitSpeed.metersPerSecond).converted(to: .milesPerHour).value
+    }
+    
+    var kmPerHour: Double {
+        Measurement(value: meterPerSecond, unit: UnitSpeed.metersPerSecond).converted(to: .kilometersPerHour).value
+    }
+    
+    var userSelectedSpeed: Double {
+        switch Defaults[.selectedSpeedOption] {
+        case .metersPerSecond:
+            return meterPerSecond
+        case .milesPerHour:
+            return milePerHour
+        case .kilometsPerHour:
+            return kmPerHour
+        }
+    }
+    
+    init(meterPerSecond: Double, date: Date) {
+        self.id = UUID()
+        self.meterPerSecond = meterPerSecond
+        self.date = date
+    }
+    
+    static let zeroSpeed = SnelSpeed(meterPerSecond: 0, date: Date())
 }

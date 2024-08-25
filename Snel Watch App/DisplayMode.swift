@@ -10,21 +10,33 @@ import SwiftUI
 import Defaults
 
 enum DisplayMode: String, CaseIterable, Identifiable {
-//    case simple
     case graph
-    case map
+    case chart
+    
+    //    case simple
+//    case big
+//    case history
+//    case rectangleHistory
+    
+    //    case map
     
     var id: String { self.rawValue }
     
     @ViewBuilder
     var view: some View {
         switch self {
-//        case .simple:
-//            SimpleView()
+            //        case .simple:
+            //            SimpleView()
         case .graph:
             GraphView()
-        case .map:
-            MapView()
+        case .chart:
+            ChartView()
+//        case .big:
+//            BigView()
+//        case .history:
+//            HistoryView()
+//        case .rectangleHistory:
+//            RectangleHistoryView()
         }
     }
 }
@@ -114,7 +126,7 @@ struct GraphView: View {
                     
                     Spacer()
                 }
-//                .padding(.horizontal, -20)
+                //                .padding(.horizontal, -20)
             } else {
                 Text(selectedSpeedOption.shortName)
                     .foregroundStyle(.secondary)
@@ -129,7 +141,7 @@ struct GraphView: View {
         })
     }
     
-
+    
     var background: some View {
         Circle()
             .trim(from: 0, to: 0.75)
@@ -179,4 +191,265 @@ struct MapView: View {
         .disabled(true)
     }
 }
+
+
+struct BigView: View {
+    
+    @Environment(LocationManager.self) var locationManager
+    @Default(.decimalCount) var decimalCount
+    @Default(.selectedSpeedOption) var selectedSpeedOption
+    @Default(.selectedTheme) var selectedTheme
+    
+    @State var showNoMovementOverlay = false
+    @State var showDesignOverlay = false
+    
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                backgroundColor
+                .edgesIgnoringSafeArea(.all)
+                .overlay(
+                    Text(String(format:"%.\(decimalCount)f", (locationManager.correctSpeed)))
+//                    Text("43")
+                        .monospacedDigit()
+                        .font(.system(size: decimalCount > 0 ? 80 : 120))
+                        .fontWidth(.expanded)
+                        .bold()
+                )
+//                
+//                designView
+            }
+//            .onTapGesture {
+//                showDesignOverlay.toggle()
+//            }
+            .toolbar(content: {
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            showDesignOverlay.toggle()
+                        }, label: {
+                            Image(systemName: "paintbrush.fill")
+                        })
+                    }
+                }
+            })
+        }
+        .sheet(isPresented: $showDesignOverlay, content: {
+            designView
+        })
+    }
+    
+    @Default(.slowThreshold) var slowThreshold
+    @Default(.mediumThreshold) var mediumThreshold
+    @Default(.fastThreshold) var fastThreshold
+    
+    var backgroundColor: Color {
+        if locationManager.correctSpeed < slowThreshold.userSelectedSpeed {
+            return slowColor
+        } else if locationManager.correctSpeed > fastThreshold.userSelectedSpeed {
+            return fastColor
+        } else {
+            return mediumColor
+        }
+    }
+    
+    @State var slowColor: Color = .red
+    @State var mediumColor: Color = .orange
+    @State var fastColor: Color = .green
+    
+    var designView: some View {
+        VStack {
+            VelaPicker(color: $slowColor, label: {
+                Text("Slow")
+                    .padding(.leading, 4)
+            })
+            
+            VelaPicker(color: $mediumColor, label: {
+                Text("Medium")
+                    .padding(.leading, 4)
+            })
+            
+            VelaPicker(color: $fastColor, label: {
+                Text("Fast")
+                    .padding(.leading, 4)
+            })
+        }
+        .bold()
+        .padding(.top, 12)
+    }
+}
+
+#Preview(body: {
+    BigView()
+        .environment(LocationManager())
+})
+
+
+
+import Vela
+
+
+struct HistoryView: View {
+    
+    @Environment(LocationManager.self) var locationManager
+    @Default(.selectedSpeedOption) var selectedSpeedOption
+    @Default(.decimalCount) var decimalCount
+    
+    var body: some View {
+        VStack {
+            
+            HStack {
+                Spacer()
+                Text(String(format:"%.\(decimalCount)f", (locationManager.correctSpeed)))
+                    .font(.largeTitle)
+                    .bold()
+            }
+            .padding(.horizontal)
+            
+            Spacer()
+            
+
+            HStack(alignment: .bottom, spacing: 1) {
+                ForEach(locationManager.recentSnelSpeeds) { speed in
+                    RoundedRectangle(cornerRadius: 2)
+                        .frame(width: 4, height: (speed.userSelectedSpeed / selectedSpeedOption.max) * 140)
+                        .foregroundColor(backgroundColorFor(speed: speed.userSelectedSpeed))
+                }
+            }
+//            .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    func backgroundColorFor(speed: Double) -> Color {
+        let percentage = speed / selectedSpeedOption.max
+        
+        if percentage < 0.2 {
+            return .red
+        } else if percentage < 0.6 {
+            return .orange
+        } else {
+            return .green
+        }
+    }
+}
+
+
+#Preview(body: {
+    HistoryView()
+        .environment(LocationManager())
+})
+
+
+struct RectangleHistoryView: View {
+    
+    @Environment(LocationManager.self) var locationManager
+    @Default(.selectedSpeedOption) var selectedSpeedOption
+    @Default(.decimalCount) var decimalCount
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text(String(format:"%.\(decimalCount)f", (locationManager.correctSpeed)))
+                    .font(.largeTitle)
+                    .bold()
+            }
+            .padding(.horizontal)
+            
+            Spacer()
+            
+
+            HStack(alignment: .bottom, spacing: 1) {
+                ForEach(locationManager.recentSnelSpeeds) { speed in
+                    Rectangle()
+                        .frame(width: 6, height: (speed.userSelectedSpeed / selectedSpeedOption.max) * 160)
+                        .foregroundColor(backgroundColorFor(speed: speed.userSelectedSpeed).opacity(0.6))
+                        .overlay(
+                            VStack {
+                                Rectangle()
+                                    .frame(width: 6, height: 2)
+                                    .foregroundColor(backgroundColorFor(speed: speed.userSelectedSpeed))
+                                Spacer()
+                            }
+                        )
+                }
+            }
+//            .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    func backgroundColorFor(speed: Double) -> Color {
+        let percentage = speed / selectedSpeedOption.max
+        
+        if percentage < 0.2 {
+            return .red
+        } else if percentage < 0.6 {
+            return .orange
+        } else {
+            return .green
+        }
+    }
+}
+
+
+#Preview(body: {
+    RectangleHistoryView()
+        .environment(LocationManager())
+})
+
+import Charts
+
+struct ChartView: View {
+    
+    @Environment(LocationManager.self) var locationManager
+    @Default(.selectedSpeedOption) var selectedSpeedOption
+    @Default(.selectedTheme) var selectedTheme
+    @Default(.decimalCount) var decimalCount
+    
+    var body: some View {
+        Chart {
+            ForEach(locationManager.recentSnelSpeeds.suffix(10)) { snelSpeed in
+                LineMark(
+                    x: .value("Time", snelSpeed.date),
+                    y: .value("Speed", snelSpeed.userSelectedSpeed)
+                )
+                .foregroundStyle(selectedTheme.color)
+                .lineStyle(.init(lineWidth: 2))
+                
+                AreaMark(
+                    x: .value("Time", snelSpeed.date),
+                    y: .value("Speed", snelSpeed.userSelectedSpeed)
+                )
+                .foregroundStyle(
+                    LinearGradient(colors: [
+                        selectedTheme.color.opacity(0.75),
+                        selectedTheme.color.opacity(0.2)
+                    ], startPoint: .top, endPoint: .bottom)
+                )
+            }
+        }
+        .chartXAxis(.hidden)
+        .chartYScale(domain: 0...averageSpeed * 1.5)
+        .onTapGesture {
+            locationManager.recentSnelSpeeds.removeAll()
+        }
+    }
+    
+    var averageSpeed: Double {
+        if let max = locationManager.recentSnelSpeeds.suffix(10).max() {
+            let what = ceil(max.userSelectedSpeed / 5) * 5
+            return what
+        } else {
+            return locationManager.correctMaxSpeed
+        }
+    }
+}
+
+
+#Preview(body: {
+    RectangleHistoryView()
+        .environment(LocationManager())
+})
 
