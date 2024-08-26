@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import Defaults
 
 struct ContentView: View {
     
@@ -22,17 +23,16 @@ struct ContentView: View {
     
     @Namespace private var namespace
     @State var selectedDisplayMode: DisplayMode = .graph
+    @Default(.selectedTheme) var selectedTheme
     
     var body: some View {
         NavigationStack {
             TabView(selection: $selectedDisplayMode) {
                 ForEach(DisplayMode.allCases) { mode in
                     mode.view.tag(mode)
+                        .containerBackground(selectedTheme.color.gradient, for: .tabView)
                 }
             }
-            .onChange(of: selectedDisplayMode, perform: { newValue in
-                print(newValue)
-            })
             .tabViewStyle(.verticalPage)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

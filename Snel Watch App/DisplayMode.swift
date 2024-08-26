@@ -399,53 +399,7 @@ struct RectangleHistoryView: View {
         .environment(LocationManager())
 })
 
-import Charts
 
-struct ChartView: View {
-    
-    @Environment(LocationManager.self) var locationManager
-    @Default(.selectedSpeedOption) var selectedSpeedOption
-    @Default(.selectedTheme) var selectedTheme
-    @Default(.decimalCount) var decimalCount
-    
-    var body: some View {
-        Chart {
-            ForEach(locationManager.recentSnelSpeeds.suffix(10)) { snelSpeed in
-                LineMark(
-                    x: .value("Time", snelSpeed.date),
-                    y: .value("Speed", snelSpeed.userSelectedSpeed)
-                )
-                .foregroundStyle(selectedTheme.color)
-                .lineStyle(.init(lineWidth: 2))
-                
-                AreaMark(
-                    x: .value("Time", snelSpeed.date),
-                    y: .value("Speed", snelSpeed.userSelectedSpeed)
-                )
-                .foregroundStyle(
-                    LinearGradient(colors: [
-                        selectedTheme.color.opacity(0.75),
-                        selectedTheme.color.opacity(0.2)
-                    ], startPoint: .top, endPoint: .bottom)
-                )
-            }
-        }
-        .chartXAxis(.hidden)
-        .chartYScale(domain: 0...averageSpeed * 1.5)
-        .onTapGesture {
-            locationManager.recentSnelSpeeds.removeAll()
-        }
-    }
-    
-    var averageSpeed: Double {
-        if let max = locationManager.recentSnelSpeeds.suffix(10).max() {
-            let what = ceil(max.userSelectedSpeed / 5) * 5
-            return what
-        } else {
-            return locationManager.correctMaxSpeed
-        }
-    }
-}
 
 
 #Preview(body: {
