@@ -10,8 +10,8 @@ import SwiftUI
 import Defaults
 
 enum DisplayMode: String, CaseIterable, Identifiable {
-    case graph
     case chart
+    case graph
     
     //    case simple
 //    case big

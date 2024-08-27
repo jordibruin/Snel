@@ -39,7 +39,7 @@ struct ChartView: View {
             }
         }
         .chartXAxis(.hidden)
-        .chartYScale(domain: 0...averageSpeed * 1.5)
+        .chartYScale(domain: 0...averageSpeed)
         .onTapGesture {
             locationManager.recentSnelSpeeds.removeAll()
         }
@@ -47,8 +47,6 @@ struct ChartView: View {
     
     var averageSpeed: Double {
         if let max = locationManager.recentSnelSpeeds.suffix(30).max() {
-//            let what = ceil(max.userSelectedSpeed / 5) * 5
-//            return what
             return max.userSelectedSpeed + 5
         } else {
             return locationManager.correctMaxSpeed

@@ -21,7 +21,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     
     var currentSnelSpeed: SnelSpeed = .zeroSpeed
-    var recentSnelSpeeds: [SnelSpeed] = []
+    var recentSnelSpeeds: [SnelSpeed] = [
+    ]
     
     
     var speedInMetersSecond: Double = 0.0
@@ -53,6 +54,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         if (authorizationStatus == CLAuthorizationStatus.denied ) {
             print("denied")
         }
+        
+//        for i in 1...100 {
+//            recentSnelSpeeds.append(
+//                SnelSpeed(meterPerSecond: 0 + (Double(i) * Double.random(in: 0.1...0.2)),
+//                date: Date()
+//                    .addingTimeInterval(Double(i) * 0.1)
+//            ))
+//        }
         
         self.authorizationStatus = authorizationStatus
         
@@ -186,7 +195,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
 struct SnelSpeed: Identifiable, Codable, Defaults.Serializable, Comparable {
     static func < (lhs: SnelSpeed, rhs: SnelSpeed) -> Bool {
-        lhs.meterPerSecond > rhs.meterPerSecond
+        lhs.meterPerSecond < rhs.meterPerSecond
     }
     
     
