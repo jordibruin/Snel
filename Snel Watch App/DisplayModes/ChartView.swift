@@ -17,31 +17,53 @@ struct ChartView: View {
     @Default(.decimalCount) var decimalCount
     
     var body: some View {
-        Chart {
-            ForEach(locationManager.recentSnelSpeeds.suffix(30)) { snelSpeed in
-                LineMark(
-                    x: .value("Time", snelSpeed.date),
-                    y: .value("Speed", snelSpeed.userSelectedSpeed)
-                )
-                .foregroundStyle(selectedTheme.color)
-                .lineStyle(.init(lineWidth: 2))
+        VStack(spacing: 0) {
+            HStack(alignment: .bottom) {
+                Text(String(format:"%.\(decimalCount)f", (locationManager.correctSpeed)))
+                    .font(.title2)
+                    .bold()
+                    .contentTransition(.numericText())
+                    .transaction {
+                        $0.animation = .default
+                    }
+                    .monospacedDigit()
                 
-                AreaMark(
-                    x: .value("Time", snelSpeed.date),
-                    y: .value("Speed", snelSpeed.userSelectedSpeed)
-                )
-                .foregroundStyle(
-                    LinearGradient(colors: [
-                        selectedTheme.color.opacity(0.7),
-                        selectedTheme.color.opacity(0.1)
-                    ], startPoint: .top, endPoint: .bottom)
-                )
+                Text(selectedSpeedOption.shortName)
+                    .font(.system(size: 12))
+                    .opacity(0.7)
+                    .padding(.bottom, 5)
+                
+                Spacer()
             }
-        }
-        .chartXAxis(.hidden)
-        .chartYScale(domain: 0...averageSpeed)
-        .onTapGesture {
-            locationManager.recentSnelSpeeds.removeAll()
+            .padding(.horizontal, 20)
+            .padding(.top, -16)
+            
+            Chart {
+                ForEach(locationManager.recentSnelSpeeds.suffix(30)) { snelSpeed in
+                    LineMark(
+                        x: .value("Time", snelSpeed.date),
+                        y: .value("Speed", snelSpeed.userSelectedSpeed)
+                    )
+                    .foregroundStyle(selectedTheme.color)
+                    .lineStyle(.init(lineWidth: 2))
+                    
+                    AreaMark(
+                        x: .value("Time", snelSpeed.date),
+                        y: .value("Speed", snelSpeed.userSelectedSpeed)
+                    )
+                    .foregroundStyle(
+                        LinearGradient(colors: [
+                            selectedTheme.color.opacity(0.7),
+                            selectedTheme.color.opacity(0.1)
+                        ], startPoint: .top, endPoint: .bottom)
+                    )
+                }
+            }
+            .chartXAxis(.hidden)
+            .chartYScale(domain: 0...averageSpeed)
+            .onTapGesture {
+                locationManager.recentSnelSpeeds.removeAll()
+            }
         }
     }
     
@@ -53,3 +75,8 @@ struct ChartView: View {
         }
     }
 }
+
+#Preview(body: {
+    ChartView()
+        .environment(LocationManager())
+})

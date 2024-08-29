@@ -21,9 +21,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     
     var currentSnelSpeed: SnelSpeed = .zeroSpeed
-    var recentSnelSpeeds: [SnelSpeed] = [
-    ]
-    
+    var recentSnelSpeeds: [SnelSpeed] = []
     
     var speedInMetersSecond: Double = 0.0
     var speedInKilometersHour: Double = 0.0
@@ -43,6 +41,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     var noSpeedReceivedCount = 0
     var authorizationStatus: CLAuthorizationStatus = .notDetermined
+    
+    var averageSpeed: SnelSpeed {
+        let average = recentSnelSpeeds.map { $0.meterPerSecond } .reduce(0, +) / Double(recentSnelSpeeds.count)
+        return SnelSpeed(meterPerSecond: average, date: Date())
+    }
     
     private var timer: Timer?
     
@@ -108,7 +111,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
                     currentSnelSpeed = snelSpeed
                     recentSnelSpeeds.append(snelSpeed)
                     
-                    if recentSnelSpeeds.count > 30 {
+                    if recentSnelSpeeds.count > 60 {
                         recentSnelSpeeds.removeFirst()
                     }
                     

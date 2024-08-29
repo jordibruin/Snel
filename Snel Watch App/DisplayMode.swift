@@ -84,11 +84,10 @@ struct GraphView: View {
     var circleView: some View {
         VStack {
             ZStack {
-                ZStack {
-                    background
-                    foreground
-                }
-                
+//                testCircle
+                mainCircle
+                averageCircle
+
                 Text(String(format:"%.\(decimalCount)f", (locationManager.correctSpeed)))
                     .font(decimalCount < 1 ? .system(size: 72) : decimalCount <= 2 ? .largeTitle : .title)
                     .minimumScaleFactor(0.5)
@@ -142,32 +141,134 @@ struct GraphView: View {
     }
     
     
-    var background: some View {
-        Circle()
-            .trim(from: 0, to: 0.75)
-            .stroke(Color(white: 140/255),
-                    style: StrokeStyle(
-                        lineWidth: 20,
-                        lineCap: .butt,
-                        lineJoin: .miter,
-                        miterLimit: 0,
-                        dash: [1, 4],
-                        dashPhase: 0))
-            .rotationEffect(.degrees(135))
+    var averageCircle: some View {
+        ZStack {
+            Circle()
+                .frame(width: 4, height: 4)
+                .foregroundColor(selectedTheme.color)
+                .offset(y: 64)
+                .rotationEffect(
+                    .degrees(45)
+                )
+                .rotationEffect(
+                    .degrees(locationManager.averageSpeed.userSelectedSpeed / selectedSpeedOption.max * 360)
+//                    .degrees(10 / selectedSpeedOption.max * 360)
+                )
+                .opacity(locationManager.averageSpeed.userSelectedSpeed > 0 && locationManager.averageSpeed.userSelectedSpeed <= selectedSpeedOption.max ? 1 : 0)
+        }
     }
     
-    var foreground: some View {
-        Circle()
-            .trim(from: 0, to: locationManager.correctSpeed / selectedSpeedOption.max)
-            .stroke(
-                selectedTheme.color,
-                style: .init(
-                    lineWidth: 20,
-                    lineCap: .butt
+    var testCircle: some View {
+        ZStack {
+            Circle()
+                .trim(from: 0, to: 0.742)
+                .stroke(Color(white: 140/255),
+                        style: StrokeStyle(
+                            lineWidth: 5,
+                            lineCap: .butt,
+                            lineJoin: .miter,
+                            miterLimit: 0,
+                            dash: [1, 4],
+                            dashPhase: 0))
+                .scaleEffect(1.025)
+                
+                
+            
+            Circle()
+                .trim(from: 0, to: 0.75)
+                .stroke(Color.white,
+                        style: StrokeStyle(
+                            lineWidth: 10,
+                            lineCap: .butt,
+                            lineJoin: .miter,
+                            miterLimit: 0,
+                            dash: [1, 24],
+                            dashPhase: 0))
+        }
+        .rotationEffect(.degrees(138))
+        .padding(-16)
+    }
+    
+    var mainCircle: some View {
+        ZStack {
+            Circle()
+                .trim(from: 0, to: 0.742)
+                .stroke(Color.white.opacity(0.5),
+                        style: StrokeStyle(
+                            lineWidth: 5,
+                            lineCap: .butt,
+                            lineJoin: .miter,
+                            miterLimit: 0,
+                            dash: [1, 4],
+                            dashPhase: 0))
+                .scaleEffect(1.04)
+                
+            Circle()
+                .trim(from: 0, to: locationManager.correctSpeed / selectedSpeedOption.max)
+                .stroke(
+                    selectedTheme.color.opacity(0.6),
+                    style: .init(
+                        lineWidth: 14,
+                        lineCap: .butt
+                    )
                 )
-            )
-            .rotationEffect(.degrees(135))
-            .animation(.bouncy, value: locationManager.correctSpeed)
+                .animation(.bouncy, value: locationManager.correctSpeed)
+            
+            Circle()
+                .trim(from: 0, to: 0.75)
+                .stroke(Color.white,
+                        style: StrokeStyle(
+                            lineWidth: 12,
+                            lineCap: .butt,
+                            lineJoin: .miter,
+                            miterLimit: 0,
+                            dash: [1, 24],
+                            dashPhase: 0))
+            
+            
+        }
+        .rotationEffect(.degrees(138))
+        .padding(-16)
+        
+//        ZStack {
+//            Circle()
+//                .trim(from: 0, to: 0.75)
+//                .stroke(Color(white: 140/255),
+//                        style: StrokeStyle(
+//                            lineWidth: 20,
+//                            lineCap: .butt,
+//                            lineJoin: .miter,
+//                            miterLimit: 0,
+//                            dash: [1, 4],
+//                            dashPhase: 0))
+//                .rotationEffect(.degrees(135))
+//            
+//            Circle()
+//                .trim(from: 0, to: 0.75)
+//                .stroke(Color.white,
+//                        style: StrokeStyle(
+//                            lineWidth: 6,
+//                            lineCap: .butt,
+//                            lineJoin: .miter,
+//                            miterLimit: 0,
+//                            dash: [1, 8],
+//                            dashPhase: 0))
+//                .scaleEffect(1.1)
+//                .rotationEffect(.degrees(135))
+//            
+//            Circle()
+//                .trim(from: 0, to: locationManager.correctSpeed / selectedSpeedOption.max)
+//                .stroke(
+//                    selectedTheme.color,
+//                    style: .init(
+//                        lineWidth: 20,
+//                        lineCap: .butt
+//                    )
+//                )
+//                .rotationEffect(.degrees(135))
+//                .animation(.bouncy, value: locationManager.correctSpeed)
+//        }
+//        .padding(-20)
     }
 }
 
@@ -281,10 +382,10 @@ struct BigView: View {
     }
 }
 
-#Preview(body: {
-    BigView()
-        .environment(LocationManager())
-})
+//#Preview(body: {
+//    BigView()
+//        .environment(LocationManager())
+//})
 
 
 
@@ -336,10 +437,10 @@ struct HistoryView: View {
 }
 
 
-#Preview(body: {
-    HistoryView()
-        .environment(LocationManager())
-})
+//#Preview(body: {
+//    HistoryView()
+//        .environment(LocationManager())
+//})
 
 
 struct RectangleHistoryView: View {
@@ -393,17 +494,17 @@ struct RectangleHistoryView: View {
     }
 }
 
-
-#Preview(body: {
-    RectangleHistoryView()
-        .environment(LocationManager())
-})
-
-
-
-
-#Preview(body: {
-    RectangleHistoryView()
-        .environment(LocationManager())
-})
-
+//
+//#Preview(body: {
+//    RectangleHistoryView()
+//        .environment(LocationManager())
+//})
+//
+//
+//
+//
+//#Preview(body: {
+//    RectangleHistoryView()
+//        .environment(LocationManager())
+//})
+//

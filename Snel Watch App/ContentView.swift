@@ -35,9 +35,11 @@ struct ContentView: View {
             }
             .tabViewStyle(.verticalPage)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    NavigationLink(destination: SettingsView()) {
-                        Label("Settings", systemImage: "gearshape.fill")
+                if selectedDisplayMode == .graph {
+                    ToolbarItem(placement: .topBarLeading) {
+                        NavigationLink(destination: SettingsView()) {
+                            Label("Settings", systemImage: "gearshape.fill")
+                        }
                     }
                 }
             }
