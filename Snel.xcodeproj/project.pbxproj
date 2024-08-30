@@ -19,6 +19,8 @@
 		C24AFB2F2C81C55300A6FAC0 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = C24AFB2E2C81C55300A6FAC0 /* TelemetryClient */; };
 		C24AFB312C81C5AA00A6FAC0 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AFB302C81C5AA00A6FAC0 /* Analytics.swift */; };
 		C24AFB362C81E5DE00A6FAC0 /* SpeedometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AFB352C81E5DE00A6FAC0 /* SpeedometerView.swift */; };
+		C24AFB3A2C81EC9000A6FAC0 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AFB392C81EC9000A6FAC0 /* LineView.swift */; };
+		C24AFB3C2C81EEF100A6FAC0 /* MinimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AFB3B2C81EEF100A6FAC0 /* MinimalView.swift */; };
 		C2829DE92C77CFFE00E2FB4E /* Vela in Frameworks */ = {isa = PBXBuildFile; productRef = C2829DE82C77CFFE00E2FB4E /* Vela */; };
 		C2A4CF052C763A24000181C6 /* Snel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C2A4CF042C763A24000181C6 /* Snel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2A4CF0A2C763A24000181C6 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF092C763A24000181C6 /* SnelApp.swift */; };
@@ -103,6 +105,8 @@
 		C246420D2C7F4331005868F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C24AFB302C81C5AA00A6FAC0 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		C24AFB352C81E5DE00A6FAC0 /* SpeedometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerView.swift; sourceTree = "<group>"; };
+		C24AFB392C81EC9000A6FAC0 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		C24AFB3B2C81EEF100A6FAC0 /* MinimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalView.swift; sourceTree = "<group>"; };
 		C2A4CEFE2C763A24000181C6 /* Snel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A4CF042C763A24000181C6 /* Snel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A4CF092C763A24000181C6 /* SnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelApp.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			children = (
 				C2033D202C7CC272003F6C9D /* ChartView.swift */,
 				C24AFB352C81E5DE00A6FAC0 /* SpeedometerView.swift */,
+				C24AFB3B2C81EEF100A6FAC0 /* MinimalView.swift */,
+				C24AFB392C81EC9000A6FAC0 /* LineView.swift */,
 			);
 			path = DisplayModes;
 			sourceTree = "<group>";
@@ -506,8 +512,10 @@
 				C2A4CF462C763B61000181C6 /* SettingsView.swift in Sources */,
 				C2A4CF3E2C763B59000181C6 /* DisplayMode.swift in Sources */,
 				C2033D212C7CC272003F6C9D /* ChartView.swift in Sources */,
+				C24AFB3C2C81EEF100A6FAC0 /* MinimalView.swift in Sources */,
 				C2A4CF3B2C763B59000181C6 /* Defaults.swift in Sources */,
 				C24AFB362C81E5DE00A6FAC0 /* SpeedometerView.swift in Sources */,
+				C24AFB3A2C81EC9000A6FAC0 /* LineView.swift in Sources */,
 				C2A4CF3D2C763B59000181C6 /* ContentView.swift in Sources */,
 				C24AFB312C81C5AA00A6FAC0 /* Analytics.swift in Sources */,
 				C2A4CF3C2C763B59000181C6 /* LocationManager.swift in Sources */,

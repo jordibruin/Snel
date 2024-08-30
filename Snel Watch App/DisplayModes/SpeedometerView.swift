@@ -37,6 +37,8 @@ struct SpeedometerView: View {
                         $0.animation = .default
                     }
                     .monospacedDigit()
+                
+                bottomArea
             }
             
             if let error = locationManager.error {
@@ -44,8 +46,20 @@ struct SpeedometerView: View {
                     .font(.caption)
             }
             
+            
+        }
+        .sheet(isPresented: $showNoMovementOverlay, content: {
+            Text("Snel uses GPS to determine your speed, please move around outside if you don't see any speed measurements.")
+                .multilineTextAlignment(.center)
+        })
+    }
+    
+    var bottomArea: some View {
+        VStack {
+            Spacer()
+            
             if locationManager.correctSpeed <= 0 {
-                HStack {
+                HStack(spacing: 0) {
                     Spacer()
                     Text("No Movement Detected")
                         .font(.system(size: 13))
@@ -59,13 +73,15 @@ struct SpeedometerView: View {
                     }, label: {
                         Image(systemName: "info.circle")
                             .foregroundStyle(.secondary)
+                            .font(.caption)
                     })
                     .buttonStyle(.plain)
                     .layoutPriority(10)
                     
                     Spacer()
                 }
-                //                .padding(.horizontal, -20)
+                .padding(.bottom, -12)
+                
             } else {
                 Text(selectedSpeedOption.shortName)
                     .foregroundStyle(.secondary)
@@ -74,21 +90,17 @@ struct SpeedometerView: View {
                     }
             }
         }
-        .sheet(isPresented: $showNoMovementOverlay, content: {
-            Text("Snel uses GPS to determine your speed, please move around outside if you don't see any speed measurements.")
-                .multilineTextAlignment(.center)
-        })
     }
     
     
     var averageCircle: some View {
         ZStack {
             Circle()
-                .frame(width: 4, height: 4)
+                .frame(width: 5, height: 5)
                 .foregroundColor(selectedTheme.color)
-                .offset(y: 64)
+                .offset(y: 72)
                 .rotationEffect(
-                    .degrees(45)
+                    .degrees(48)
                 )
                 .rotationEffect(
                     .degrees(locationManager.averageSpeed.userSelectedSpeed / selectedSpeedOption.max * 360)
@@ -96,6 +108,7 @@ struct SpeedometerView: View {
                 )
                 .opacity(locationManager.averageSpeed.userSelectedSpeed > 0 && locationManager.averageSpeed.userSelectedSpeed <= selectedSpeedOption.max ? 1 : 0)
         }
+        .animation(.easeInOut(duration: 1), value: speedPoint)
     }
     
     var testCircle: some View {
@@ -129,6 +142,10 @@ struct SpeedometerView: View {
         .padding(-16)
     }
     
+    var speedPoint: Double {
+        locationManager.correctSpeed / selectedSpeedOption.max
+    }
+    
     var mainCircle: some View {
         ZStack {
             Circle()
@@ -144,7 +161,7 @@ struct SpeedometerView: View {
                 .scaleEffect(1.04)
                 
             Circle()
-                .trim(from: 0, to: locationManager.correctSpeed / selectedSpeedOption.max)
+                .trim(from: 0, to: speedPoint)
                 .stroke(
                     selectedTheme.color.opacity(0.6),
                     style: .init(
@@ -152,7 +169,6 @@ struct SpeedometerView: View {
                         lineCap: .butt
                     )
                 )
-                .animation(.bouncy, value: locationManager.correctSpeed)
             
             Circle()
                 .trim(from: 0, to: 0.75)
@@ -162,53 +178,12 @@ struct SpeedometerView: View {
                             lineCap: .butt,
                             lineJoin: .miter,
                             miterLimit: 0,
-                            dash: [1, 24],
+                            dash: [2, 23],
                             dashPhase: 0))
-            
-            
         }
         .rotationEffect(.degrees(138))
-        .padding(-16)
-        
-//        ZStack {
-//            Circle()
-//                .trim(from: 0, to: 0.75)
-//                .stroke(Color(white: 140/255),
-//                        style: StrokeStyle(
-//                            lineWidth: 20,
-//                            lineCap: .butt,
-//                            lineJoin: .miter,
-//                            miterLimit: 0,
-//                            dash: [1, 4],
-//                            dashPhase: 0))
-//                .rotationEffect(.degrees(135))
-//
-//            Circle()
-//                .trim(from: 0, to: 0.75)
-//                .stroke(Color.white,
-//                        style: StrokeStyle(
-//                            lineWidth: 6,
-//                            lineCap: .butt,
-//                            lineJoin: .miter,
-//                            miterLimit: 0,
-//                            dash: [1, 8],
-//                            dashPhase: 0))
-//                .scaleEffect(1.1)
-//                .rotationEffect(.degrees(135))
-//
-//            Circle()
-//                .trim(from: 0, to: locationManager.correctSpeed / selectedSpeedOption.max)
-//                .stroke(
-//                    selectedTheme.color,
-//                    style: .init(
-//                        lineWidth: 20,
-//                        lineCap: .butt
-//                    )
-//                )
-//                .rotationEffect(.degrees(135))
-//                .animation(.bouncy, value: locationManager.correctSpeed)
-//        }
-//        .padding(-20)
+        .padding(-8)
+        .animation(.easeInOut(duration: 1), value: speedPoint)
     }
 }
 
