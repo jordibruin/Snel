@@ -16,6 +16,9 @@
 		C246420A2C7F4330005868F1 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24642092C7F4330005868F1 /* AppIntent.swift */; };
 		C246420C2C7F4331005868F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C246420B2C7F4331005868F1 /* Assets.xcassets */; };
 		C24642102C7F4331005868F1 /* Snel WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C24642032C7F4330005868F1 /* Snel WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C24AFB2F2C81C55300A6FAC0 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = C24AFB2E2C81C55300A6FAC0 /* TelemetryClient */; };
+		C24AFB312C81C5AA00A6FAC0 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AFB302C81C5AA00A6FAC0 /* Analytics.swift */; };
+		C24AFB362C81E5DE00A6FAC0 /* SpeedometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24AFB352C81E5DE00A6FAC0 /* SpeedometerView.swift */; };
 		C2829DE92C77CFFE00E2FB4E /* Vela in Frameworks */ = {isa = PBXBuildFile; productRef = C2829DE82C77CFFE00E2FB4E /* Vela */; };
 		C2A4CF052C763A24000181C6 /* Snel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C2A4CF042C763A24000181C6 /* Snel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2A4CF0A2C763A24000181C6 /* SnelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A4CF092C763A24000181C6 /* SnelApp.swift */; };
@@ -98,6 +101,8 @@
 		C24642092C7F4330005868F1 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
 		C246420B2C7F4331005868F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C246420D2C7F4331005868F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C24AFB302C81C5AA00A6FAC0 /* Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		C24AFB352C81E5DE00A6FAC0 /* SpeedometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerView.swift; sourceTree = "<group>"; };
 		C2A4CEFE2C763A24000181C6 /* Snel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A4CF042C763A24000181C6 /* Snel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A4CF092C763A24000181C6 /* SnelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnelApp.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2829DE92C77CFFE00E2FB4E /* Vela in Frameworks */,
+				C24AFB2F2C81C55300A6FAC0 /* TelemetryClient in Frameworks */,
 				C2A4CF4B2C763B8E000181C6 /* Defaults in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C2033D202C7CC272003F6C9D /* ChartView.swift */,
+				C24AFB352C81E5DE00A6FAC0 /* SpeedometerView.swift */,
 			);
 			path = DisplayModes;
 			sourceTree = "<group>";
@@ -173,6 +180,34 @@
 				C246420D2C7F4331005868F1 /* Info.plist */,
 			);
 			path = "Snel Widget";
+			sourceTree = "<group>";
+		};
+		C24AFB322C81E5B800A6FAC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4CF392C763B59000181C6 /* ContentView.swift */,
+				C2A4CF422C763B61000181C6 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C24AFB332C81E5BC00A6FAC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4CF3A2C763B59000181C6 /* DisplayMode.swift */,
+				C2A4CF3F2C763B61000181C6 /* SpeedOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C24AFB342C81E5C800A6FAC0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C2A4CF382C763B59000181C6 /* LocationManager.swift */,
+				C24AFB302C81C5AA00A6FAC0 /* Analytics.swift */,
+				C2A4CF372C763B59000181C6 /* Defaults.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		C2A4CEF72C763A24000181C6 = {
@@ -204,13 +239,10 @@
 			children = (
 				C2C19ACD2C7642D8004E4451 /* Snel-Watch-App-Info.plist */,
 				C2A4CF092C763A24000181C6 /* SnelApp.swift */,
-				C2A4CF392C763B59000181C6 /* ContentView.swift */,
-				C2A4CF372C763B59000181C6 /* Defaults.swift */,
+				C24AFB322C81E5B800A6FAC0 /* Views */,
+				C24AFB342C81E5C800A6FAC0 /* Tools */,
 				C24641FC2C7F4167005868F1 /* Localizable.xcstrings */,
-				C2A4CF3A2C763B59000181C6 /* DisplayMode.swift */,
-				C2A4CF382C763B59000181C6 /* LocationManager.swift */,
-				C2A4CF422C763B61000181C6 /* SettingsView.swift */,
-				C2A4CF3F2C763B61000181C6 /* SpeedOption.swift */,
+				C24AFB332C81E5BC00A6FAC0 /* Model */,
 				C2033D1F2C7CC25E003F6C9D /* DisplayModes */,
 				C2A4CF412C763B61000181C6 /* Theme.swift */,
 				C2A4CF472C763B6B000181C6 /* Assets.xcassets */,
@@ -308,6 +340,7 @@
 			packageProductDependencies = (
 				C2A4CF4A2C763B8E000181C6 /* Defaults */,
 				C2829DE82C77CFFE00E2FB4E /* Vela */,
+				C24AFB2E2C81C55300A6FAC0 /* TelemetryClient */,
 			);
 			productName = "Snel Watch App";
 			productReference = C2A4CF042C763A24000181C6 /* Snel Watch App.app */;
@@ -395,6 +428,7 @@
 			packageReferences = (
 				C2A4CF492C763B8E000181C6 /* XCRemoteSwiftPackageReference "Defaults" */,
 				C2829DE72C77CFFE00E2FB4E /* XCRemoteSwiftPackageReference "Vela" */,
+				C24AFB2D2C81C55300A6FAC0 /* XCRemoteSwiftPackageReference "SwiftClient" */,
 			);
 			productRefGroup = C2A4CEFF2C763A24000181C6 /* Products */;
 			projectDirPath = "";
@@ -473,7 +507,9 @@
 				C2A4CF3E2C763B59000181C6 /* DisplayMode.swift in Sources */,
 				C2033D212C7CC272003F6C9D /* ChartView.swift in Sources */,
 				C2A4CF3B2C763B59000181C6 /* Defaults.swift in Sources */,
+				C24AFB362C81E5DE00A6FAC0 /* SpeedometerView.swift in Sources */,
 				C2A4CF3D2C763B59000181C6 /* ContentView.swift in Sources */,
+				C24AFB312C81C5AA00A6FAC0 /* Analytics.swift in Sources */,
 				C2A4CF3C2C763B59000181C6 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,7 +739,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Snel Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				ENABLE_PREVIEWS = YES;
@@ -717,7 +753,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -736,7 +772,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Snel Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				ENABLE_PREVIEWS = YES;
@@ -750,7 +786,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -768,10 +804,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				INFOPLIST_KEY_CFBundleDisplayName = Snel;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -784,10 +820,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 8Q7TMPA46J;
 				INFOPLIST_KEY_CFBundleDisplayName = Snel;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goodsnooze.sneller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -940,6 +976,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C24AFB2D2C81C55300A6FAC0 /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		C2829DE72C77CFFE00E2FB4E /* XCRemoteSwiftPackageReference "Vela" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Serene-Garden/Vela";
@@ -959,6 +1003,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C24AFB2E2C81C55300A6FAC0 /* TelemetryClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C24AFB2D2C81C55300A6FAC0 /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			productName = TelemetryClient;
+		};
 		C2829DE82C77CFFE00E2FB4E /* Vela */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C2829DE72C77CFFE00E2FB4E /* XCRemoteSwiftPackageReference "Vela" */;

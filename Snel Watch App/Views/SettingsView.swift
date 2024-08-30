@@ -38,6 +38,7 @@ struct SettingsView: View {
                                 .foregroundColor(theme.color)
                                 .frame(width: 30, height: 30)
                                 .onTapGesture {
+                                    Analytics.send(.selectedTheme, with: ["theme": theme.rawValue])
                                     withAnimation {
                                         selectedTheme = theme
                                     }
@@ -69,6 +70,9 @@ struct SettingsView: View {
                     }
                 } label: {
                     Text("Speed Unit")
+                }
+                .onChange(of: selectedSpeedOption) { oldValue, newValue in
+                    Analytics.send(.selectedSpeedOption, with:["speedOption": newValue.shortName])
                 }
                 
                 HStack {
