@@ -13,8 +13,8 @@ enum DisplayMode: String, CaseIterable, Identifiable {
     
     case speedometer
     case chart
-    case line
-    case minimal
+//    case line
+//    case minimal
     
     var id: String { self.rawValue }
     
@@ -25,10 +25,10 @@ enum DisplayMode: String, CaseIterable, Identifiable {
             SpeedometerView()
         case .chart:
             ChartView()
-        case .line:
-            LineView()
-        case .minimal:
-            MinimalView()
+//        case .line:
+//            LineView()
+//        case .minimal:
+//            MinimalView()
 //        case .big:
 //            BigView()
 //        case .history:
@@ -42,8 +42,8 @@ enum DisplayMode: String, CaseIterable, Identifiable {
         switch self {
         case .speedometer, .chart:
             false
-        case .line, .minimal:
-            true
+//        case .line, .minimal:
+//            true
         }
     }
 }
